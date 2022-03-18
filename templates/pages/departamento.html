@@ -1,0 +1,68 @@
+{% extends "inicio.html" %}
+{% load static %}
+{% block css %}
+   <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %}
+{% block titulo %} Departamento {% endblock %} 
+{% block contenido %}
+    <section class="form-container">
+    <div class="form-header" >
+      <h1>Formulario de Departamentos</h1>
+    </div>
+    <form id="form-departamento" class="form">
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input
+          type="text"
+          name="descripcion"
+          id="descripcion"
+          placeholder="Ingrese un Departamento"
+          value=""
+          required
+        />
+      </div>
+      <div class="form-check">
+      <label>Activo
+        <input type="checkbox" id="activo" checked />
+      </label>
+    </div>
+    <button
+      id="enviar"
+      type="submit"
+      name="enviar">
+      Grabar
+    </button>
+    </form>
+    <div class="consulta none table-responsive" id="consulta">
+      <h2>Listado de Deparamentos</h2>
+      <table class="consulta-est" id="consulta-est" border="1">
+        <thead>
+          <th>#</th>
+          <th>Descripcion</th>
+          <th>Estado</th>
+          <th>Acciones</th>
+        </thead>
+        <tbody class="detalle-est" id="detalle-est">
+          <tr>
+            <td>1</td>
+            <td>Analista</td>
+            <td>Activo</td>
+            <td>
+              <button>✏️</button>
+              <button>❌</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Ingeniero Sistema</td>
+            <td>Inactivo</td>
+            <td>
+              <button>✏️</button>
+              <button>❌</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>    
+  </section>
+{% endblock %}
